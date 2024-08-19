@@ -1,18 +1,12 @@
 <template>
-  <div class="home">
+  <div>
     <h2>ホームページ</h2>
-    <p>ようこそ、{{ siteName }}へ！</p>
-    <router-link to="/products">商品を見る</router-link>
+    <p>これはホームページです。</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomePage',
-  data() {
-    return {
-      siteName: '{ECサイト名}'
-    }
-  }
+  name: 'HomePage'
 }
 </script>

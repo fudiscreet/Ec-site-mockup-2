@@ -9,6 +9,7 @@
         <router-link to="/cart">カート ({{ cartItemCount }})</router-link>
       </nav>
     </header>
+    <p>現在のルート: {{ $route.path }}</p>
     <router-view></router-view>
   </div>
 </template>
