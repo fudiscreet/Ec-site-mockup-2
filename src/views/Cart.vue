@@ -21,7 +21,7 @@
   import { mapState, mapGetters, mapActions } from 'vuex'
   
   export default {
-    name: 'Cart',
+    name: 'ShoppingCart',
     computed: {
       ...mapState(['cart']),
       ...mapGetters(['cartTotal'])

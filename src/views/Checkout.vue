@@ -30,7 +30,7 @@
   import { mapActions } from 'vuex'
   
   export default {
-    name: 'Checkout',
+    name: 'CheckoutPage',
     data() {
       return {
         orderDetails: {
