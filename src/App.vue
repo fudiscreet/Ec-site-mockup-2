@@ -26,7 +26,7 @@ export default {
   computed: {
     ...mapState(['cart']),
     cartItemCount() {
-      return this.cart.length
+      return this.cart.reduce((total, item) => total + item.quantity, 0)
     }
   }
 }

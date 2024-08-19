@@ -2,8 +2,10 @@
   <div class="product-list">
     <h2>商品一覧</h2>
     <div v-for="product in products" :key="product.id" class="product-item">
+      <img :src="product.image" :alt="product.name">
       <h3>{{ product.name }}</h3>
       <p>¥{{ product.price }}</p>
+      <router-link :to="{ name: 'ProductDetail', params: { id: product.id } }">詳細を見る</router-link>
       <button @click="addToCart(product)">カートに追加</button>
     </div>
   </div>
@@ -18,7 +20,10 @@ export default {
     ...mapState(['products'])
   },
   methods: {
-    ...mapActions(['addToCart'])
+    ...mapActions(['addToCart']),
+    addToCart(product) {
+      this.addToCart({ product, quantity: 1 })
+    }
   }
 }
 </script>
