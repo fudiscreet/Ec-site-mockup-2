@@ -9,8 +9,8 @@
         <router-link to="/cart">カート ({{ cartItemCount }})</router-link>
       </nav>
     </header>
-    <p>現在のルート: {{ $route.path }}</p>
-    <router-view></router-view>
+    <p>現在のルート: {{ currentRoute }}</p>
+    <router-view v-if="componentKey > 0" :key="componentKey"></router-view>
   </div>
 </template>
 
@@ -21,13 +21,22 @@ export default {
   name: 'App',
   data() {
     return {
-      siteName: '{ECサイト名}'
+      siteName: '{ECサイト名}',
+      componentKey: 0
     }
   },
   computed: {
     ...mapState(['cart']),
     cartItemCount() {
       return this.cart.length
+    },
+    currentRoute() {
+      return this.$route.path
+    }
+  },
+  watch: {
+    $route() {
+      this.componentKey += 1
     }
   }
 }
