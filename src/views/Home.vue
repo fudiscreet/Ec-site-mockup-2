@@ -1,12 +1,18 @@
 <template>
   <div class="home">
-    <h1>ホームページ</h1>
-    <p>ようこそ、{ECサイト名}へ！</p>
+    <h2>ホームページ</h2>
+    <p>ようこそ、{{ siteName }}へ！</p>
+    <router-link to="/products" class="btn">商品を見る</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  data() {
+    return {
+      siteName: '{ECサイト名}'
+    }
+  }
 }
 </script>
